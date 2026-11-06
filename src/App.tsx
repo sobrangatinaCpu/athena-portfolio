@@ -1,21 +1,21 @@
 import { useEffect, useState, type SyntheticEvent } from "react";
 
 // Hosted portfolio images in the exact order provided.
-const citrackerLogin = "https://i.postimg.cc/qMLtS2C0/citracker-login.jpg";
-const cppCertificate = "https://i.postimg.cc/HLfjX2FX/cpp-certificate.jpg";
-const shallowSleepGameplay = "https://i.postimg.cc/XqgJM0qC/shallow-sleep-gameplay.png";
-const sqlBasicsCertificate = "https://i.postimg.cc/5NxyBjKp/sql-basics-certificate.png";
-const sqlIntermediateCertificate = "https://i.postimg.cc/L4v2MDvb/sql-intermediate-certificate.jpg";
-const sqlIntroductionCertificate = "https://i.postimg.cc/7LvyNWYb/sql-introduction-certificate.jpg";
-const vestEnclosureBox = "https://i.postimg.cc/hvdc1RWN/vest-enclosure-box.png";
-const vestEnclosureCurved = "https://i.postimg.cc/NFHBkvqS/vest-enclosure-curved.png";
-const athenaMaeBaranaResume = "https://i.postimg.cc/j27t4Y0p/Athena-Mae-Barana-Resume.jpg";
-const athenaProfile = "https://i.postimg.cc/xqVYspnZ/athena-profile.jpg";
-const citInventoryScreen = "https://i.postimg.cc/Btfsh7J4/cit-inventory-screen.png";
-const postureVest = "https://i.postimg.cc/mhWRdpTx/posture-vest.png";
-const ziploc8Backpack = "https://i.postimg.cc/YjBkXDtK/ziploc8-backpack.png";
-const ziploc8Hardware = "https://i.postimg.cc/Z0zZfsJJ/ziploc8-hardware.png";
-const faviconUrl = "https://i.postimg.cc/9XdW0VbM/favicon.png";
+const citrackerLogin = "/citracker-login.jpg";
+const cppCertificate = "/cpp-certificate.jpg";
+const shallowSleepGameplay = "/shallow-sleep-gameplay.png";
+const sqlBasicsCertificate = "/sql-basics-certificate.png";
+const sqlIntermediateCertificate = "/sql-intermediate-certificate.jpg";
+const sqlIntroductionCertificate = "/sql-introduction-certificate.jpg";
+const vestEnclosureBox = "/vest-enclosure-box.png";
+const vestEnclosureCurved = "/vest-enclosure-curved.png";
+const athenaMaeBaranaResume = "/Athena-Mae-Barana-Resume.jpg";
+const athenaProfile = "/athena-profile.jpg";
+const citInventoryScreen = "/cit-inventory-screen.png";
+const postureVest = "/posture-vest.png";
+const ziploc8Backpack = "/ziploc8-backpack.png";
+const ziploc8Hardware = "/ziploc8-hardware.png";
+const faviconUrl = "/favicon.png";
 
 const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   const image = event.currentTarget;
