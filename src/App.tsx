@@ -1,25 +1,24 @@
-import { useEffect, useState } from "react";
-import cppCertificate from "./assets/uploads/cpp-certificate.jpg";
-import sqlBasicsCertificate from "./assets/uploads/sql-basics-certificate.png";
-import sqlIntermediateCertificate from "./assets/uploads/sql-intermediate-certificate.jpg";
-import sqlIntroductionCertificate from "./assets/uploads/sql-introduction-certificate.jpg";
-import postureVest from "./assets/uploads/posture-vest.png";
-import vestEnclosureCurved from "./assets/uploads/vest-enclosure-curved.png";
-import vestEnclosureBox from "./assets/uploads/vest-enclosure-box.png";
-import citInventoryScreen from "./assets/uploads/cit-inventory-screen.png";
-import citrackerLogin from "./assets/uploads/citracker-login.jpg";
-import ziploc8Backpack from "./assets/uploads/ziploc8-backpack.png";
-import ziploc8Hardware from "./assets/uploads/ziploc8-hardware.png";
-import shallowSleepGameplay from "./assets/uploads/shallow-sleep-gameplay.png";
+import { useEffect, useState, type SyntheticEvent } from "react";
 
-// Files placed in Vite's public folder are referenced by URL, not imported.
-// This works both locally and when the app is deployed under a Vercel/Vite base path.
+// Vite copies everything in /public to the deployed site root.
 const publicAsset = (fileName: string) =>
   `${import.meta.env.BASE_URL}${fileName.replace(/^\//, "")}`;
 
 const athenaProfile = publicAsset("athena-profile.jpg");
+const cppCertificate = publicAsset("cpp-certificate.jpg");
+const sqlBasicsCertificate = publicAsset("sql-basics-certificate.png");
+const sqlIntermediateCertificate = publicAsset("sql-intermediate-certificate.jpg");
+const sqlIntroductionCertificate = publicAsset("sql-introduction-certificate.jpg");
+const postureVest = publicAsset("posture-vest.png");
+const vestEnclosureCurved = publicAsset("vest-enclosure-curved.png");
+const vestEnclosureBox = publicAsset("vest-enclosure-box.png");
+const citInventoryScreen = publicAsset("cit-inventory-screen.png");
+const citrackerLogin = publicAsset("citracker-login.jpg");
+const ziploc8Backpack = publicAsset("ziploc8-backpack.png");
+const ziploc8Hardware = publicAsset("ziploc8-hardware.png");
+const shallowSleepGameplay = publicAsset("shallow-sleep-gameplay.png");
 
-const handleProfileImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   const image = event.currentTarget;
   const attemptedFallback = image.dataset.fallbackAttempted === "true";
 
