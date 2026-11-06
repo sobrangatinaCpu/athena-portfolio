@@ -772,7 +772,9 @@ function App() {
             <span>IN MIND?</span>
           </h2>
           <div className="contact-actions">
-            <a href="mailto:athenamaebarana@gmail.com?subject=Internship%20Opportunity">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=athenamaebarana@gmail.com&su=Project%20Opportunity&body=Hi%20Athena%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project%20opportunity%20with%20you.%0A%0AThank%20you."
+                target="_blank"
+                rel="noreferrer">
               <span>Discuss Opportunities</span>
               <ArrowIcon diagonal />
             </a>
