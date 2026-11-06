@@ -1,20 +1,21 @@
 import { useEffect, useState, type SyntheticEvent } from "react";
 
 // Hosted portfolio images in the exact order provided.
-const citrackerLogin = "https://i.postimg.cc/ykDYSgPr/citracker-login.jpg";
-const cppCertificate = "https://i.postimg.cc/67f9NdWp/cpp-certificate.jpg";
-const shallowSleepGameplay = "https://i.postimg.cc/YLhkgZ1r/shallow-sleep-gameplay.png";
-const sqlBasicsCertificate = "https://i.postimg.cc/Z0MJZYSy/sql-basics-certificate.png";
-const sqlIntermediateCertificate = "https://i.postimg.cc/qgt9s8Ps/sql-intermediate-certificate.jpg";
-const sqlIntroductionCertificate = "https://i.postimg.cc/LJV79vPM/sql-introduction-certificate.jpg";
-const vestEnclosureBox = "https://i.postimg.cc/SYkBm5KG/vest-enclosure-box.png";
-const vestEnclosureCurved = "https://i.postimg.cc/MfqCz4Gm/vest-enclosure-curved.png";
-const athenaMaeBaranaResume = "https://i.postimg.cc/n9pyn5L2/Athena-Mae-Barana-Resume.jpg";
-const athenaProfile = "https://i.postimg.cc/V0g3vRS9/athena-profile.jpg";
-const citInventoryScreen = "https://i.postimg.cc/2LGPywqK/cit-inventory-screen.png";
-const postureVest = "https://i.postimg.cc/q6w9qLtQ/posture-vest.png";
-const ziploc8Backpack = "https://i.postimg.cc/m1j0kwc8/ziploc8-backpack.png";
-const ziploc8Hardware = "https://i.postimg.cc/K3fdjNKW/ziploc8-hardware.png";
+const citrackerLogin = "https://i.postimg.cc/qMLtS2C0/citracker-login.jpg";
+const cppCertificate = "https://i.postimg.cc/HLfjX2FX/cpp-certificate.jpg";
+const shallowSleepGameplay = "https://i.postimg.cc/XqgJM0qC/shallow-sleep-gameplay.png";
+const sqlBasicsCertificate = "https://i.postimg.cc/5NxyBjKp/sql-basics-certificate.png";
+const sqlIntermediateCertificate = "https://i.postimg.cc/L4v2MDvb/sql-intermediate-certificate.jpg";
+const sqlIntroductionCertificate = "https://i.postimg.cc/7LvyNWYb/sql-introduction-certificate.jpg";
+const vestEnclosureBox = "https://i.postimg.cc/hvdc1RWN/vest-enclosure-box.png";
+const vestEnclosureCurved = "https://i.postimg.cc/NFHBkvqS/vest-enclosure-curved.png";
+const athenaMaeBaranaResume = "https://i.postimg.cc/j27t4Y0p/Athena-Mae-Barana-Resume.jpg";
+const athenaProfile = "https://i.postimg.cc/xqVYspnZ/athena-profile.jpg";
+const citInventoryScreen = "https://i.postimg.cc/Btfsh7J4/cit-inventory-screen.png";
+const postureVest = "https://i.postimg.cc/mhWRdpTx/posture-vest.png";
+const ziploc8Backpack = "https://i.postimg.cc/YjBkXDtK/ziploc8-backpack.png";
+const ziploc8Hardware = "https://i.postimg.cc/Z0zZfsJJ/ziploc8-hardware.png";
+const faviconUrl = "https://i.postimg.cc/9XdW0VbM/favicon.png";
 
 const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   const image = event.currentTarget;
@@ -298,6 +299,16 @@ function ArrowIcon({ diagonal = false }: { diagonal?: boolean }) {
 }
 
 function App() {
+  useEffect(() => {
+    let favicon = document.querySelector<HTMLLinkElement>("link[rel='icon']");
+    if (!favicon) {
+      favicon = document.createElement("link");
+      favicon.rel = "icon";
+      document.head.appendChild(favicon);
+    }
+    favicon.href = faviconUrl;
+  }, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState<"All" | Project["category"]>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
