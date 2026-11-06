@@ -1,35 +1,26 @@
 import { useEffect, useState, type SyntheticEvent } from "react";
 
-// Vite copies everything in /public to the deployed site root.
-const publicAsset = (fileName: string) =>
-  `${import.meta.env.BASE_URL}${fileName.replace(/^\//, "")}`;
+// Hosted image URLs, kept in the exact order provided.
+const citrackerLogin = "https://i.ibb.co/p6xjMvTB/citracker-login.jpg";
+const cppCertificate = "https://i.ibb.co/FbmYdDDd/cpp-certificate.jpg";
+const shallowSleepGameplay = "https://i.ibb.co/SDfGjQBB/shallow-sleep-gameplay.png";
+const sqlBasicsCertificate = "https://i.ibb.co/N2XFj2Zc/sql-basics-certificate.png";
+const sqlIntermediateCertificate = "https://i.ibb.co/vx5Cw3Pg/sql-intermediate-certificate.jpg";
+const sqlIntroductionCertificate = "https://i.ibb.co/svgCFbCN/sql-introduction-certificate.jpg";
+const vestEnclosureBox = "https://i.ibb.co/BKz2h1rD/vest-enclosure-box.png";
+const vestEnclosureCurved = "https://i.ibb.co/Y4TgsH9G/vest-enclosure-curved.png";
+const athenaMaeBaranaResume = "https://i.ibb.co/BKTjjWXT/Athena-Mae-Barana-Resume.jpg";
+const athenaProfile = "https://i.ibb.co/5hYYfMpJ/athena-profile.jpg";
+const citInventoryScreen = "https://i.ibb.co/Q73MNj02/cit-inventory-screen.png";
+const postureVest = "https://i.ibb.co/fV4ncM7x/posture-vest.png";
+const ziploc8Backpack = "https://i.ibb.co/LD6c0Dd2/ziploc8-backpack.png";
+const ziploc8Hardware = "https://i.ibb.co/YFCyTj0k/ziploc8-hardware.png";
 
-const athenaProfile = publicAsset("athena-profile.jpg");
-const cppCertificate = publicAsset("cpp-certificate.jpg");
-const sqlBasicsCertificate = publicAsset("sql-basics-certificate.png");
-const sqlIntermediateCertificate = publicAsset("sql-intermediate-certificate.jpg");
-const sqlIntroductionCertificate = publicAsset("sql-introduction-certificate.jpg");
-const postureVest = publicAsset("posture-vest.png");
-const vestEnclosureCurved = publicAsset("vest-enclosure-curved.png");
-const vestEnclosureBox = publicAsset("vest-enclosure-box.png");
-const citInventoryScreen = publicAsset("cit-inventory-screen.png");
-const citrackerLogin = publicAsset("citracker-login.jpg");
-const ziploc8Backpack = publicAsset("ziploc8-backpack.png");
-const ziploc8Hardware = publicAsset("ziploc8-hardware.png");
-const shallowSleepGameplay = publicAsset("shallow-sleep-gameplay.png");
+// Retain the resume URL for future use without triggering TypeScript no-unused checks.
+void athenaMaeBaranaResume;
 
 const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   const image = event.currentTarget;
-  const attemptedFallback = image.dataset.fallbackAttempted === "true";
-
-  // Also support public/images/athena-profile.jpg if the file was placed there.
-  if (!attemptedFallback) {
-    image.dataset.fallbackAttempted = "true";
-    image.src = publicAsset("images/athena-profile.jpg");
-    return;
-  }
-
-  // Keep the layout clean if neither public path exists.
   image.onerror = null;
   image.style.display = "none";
 };
@@ -772,9 +763,7 @@ function App() {
             <span>IN MIND?</span>
           </h2>
           <div className="contact-actions">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=athenamaebarana@gmail.com&su=Project%20Opportunity&body=Hi%20Athena%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project%20opportunity%20with%20you.%0A%0AThank%20you."
-                target="_blank"
-                rel="noreferrer">
+            <a href="mailto:athenamaebarana@gmail.com?subject=Internship%20Opportunity">
               <span>Discuss Opportunities</span>
               <ArrowIcon diagonal />
             </a>
