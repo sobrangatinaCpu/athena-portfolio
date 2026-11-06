@@ -1,0 +1,10 @@
+{
+  "description": "An interactive portfolio website that showcases creative work, skills, and experience, helping professionals present their work and connect with potential clients.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
