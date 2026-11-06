@@ -1,6 +1,10 @@
 import { useEffect, useState, type SyntheticEvent } from "react";
 
-// Hosted image URLs, kept in the exact order provided.
+// Keep this helper because the project document is still stored in /public.
+const publicAsset = (fileName: string) =>
+  `${import.meta.env.BASE_URL}${fileName.replace(/^\//, "")}`;
+
+// Hosted portfolio images in the exact order provided.
 const citrackerLogin = "https://i.ibb.co/p6xjMvTB/citracker-login.jpg";
 const cppCertificate = "https://i.ibb.co/FbmYdDDd/cpp-certificate.jpg";
 const shallowSleepGameplay = "https://i.ibb.co/SDfGjQBB/shallow-sleep-gameplay.png";
@@ -15,9 +19,6 @@ const citInventoryScreen = "https://i.ibb.co/Q73MNj02/cit-inventory-screen.png";
 const postureVest = "https://i.ibb.co/fV4ncM7x/posture-vest.png";
 const ziploc8Backpack = "https://i.ibb.co/LD6c0Dd2/ziploc8-backpack.png";
 const ziploc8Hardware = "https://i.ibb.co/YFCyTj0k/ziploc8-hardware.png";
-
-// Retain the resume URL for future use without triggering TypeScript no-unused checks.
-void athenaMaeBaranaResume;
 
 const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   const image = event.currentTarget;
@@ -724,7 +725,7 @@ function App() {
 
               <a
                 className="resume-download"
-                href={publicAsset("Athena-Mae-Barana-Resume.jpg")}
+                href={athenaMaeBaranaResume}
                 download="Athena-Mae-Barana-Resume.jpg"
               >
                 <span>Download my resume</span>
