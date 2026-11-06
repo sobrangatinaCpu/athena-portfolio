@@ -1,20 +1,20 @@
 import { useEffect, useState, type SyntheticEvent } from "react";
 
 // Hosted portfolio images in the exact order provided.
-const citrackerLogin = "https://i.ibb.co/p6xjMvTB/citracker-login.jpg";
-const cppCertificate = "https://i.ibb.co/FbmYdDDd/cpp-certificate.jpg";
-const shallowSleepGameplay = "https://i.ibb.co/SDfGjQBB/shallow-sleep-gameplay.png";
-const sqlBasicsCertificate = "https://i.ibb.co/N2XFj2Zc/sql-basics-certificate.png";
-const sqlIntermediateCertificate = "https://i.ibb.co/vx5Cw3Pg/sql-intermediate-certificate.jpg";
-const sqlIntroductionCertificate = "https://i.ibb.co/svgCFbCN/sql-introduction-certificate.jpg";
-const vestEnclosureBox = "https://i.ibb.co/BKz2h1rD/vest-enclosure-box.png";
-const vestEnclosureCurved = "https://i.ibb.co/Y4TgsH9G/vest-enclosure-curved.png";
-const athenaMaeBaranaResume = "https://i.ibb.co/BKTjjWXT/Athena-Mae-Barana-Resume.jpg";
-const athenaProfile = "https://i.ibb.co/5hYYfMpJ/athena-profile.jpg";
-const citInventoryScreen = "https://i.ibb.co/Q73MNj02/cit-inventory-screen.png";
-const postureVest = "https://i.ibb.co/fV4ncM7x/posture-vest.png";
-const ziploc8Backpack = "https://i.ibb.co/LD6c0Dd2/ziploc8-backpack.png";
-const ziploc8Hardware = "https://i.ibb.co/YFCyTj0k/ziploc8-hardware.png";
+const citrackerLogin = "https://i.postimg.cc/ykDYSgPr/citracker-login.jpg";
+const cppCertificate = "https://i.postimg.cc/67f9NdWp/cpp-certificate.jpg";
+const shallowSleepGameplay = "https://i.postimg.cc/YLhkgZ1r/shallow-sleep-gameplay.png";
+const sqlBasicsCertificate = "https://i.postimg.cc/Z0MJZYSy/sql-basics-certificate.png";
+const sqlIntermediateCertificate = "https://i.postimg.cc/qgt9s8Ps/sql-intermediate-certificate.jpg";
+const sqlIntroductionCertificate = "https://i.postimg.cc/LJV79vPM/sql-introduction-certificate.jpg";
+const vestEnclosureBox = "https://i.postimg.cc/SYkBm5KG/vest-enclosure-box.png";
+const vestEnclosureCurved = "https://i.postimg.cc/MfqCz4Gm/vest-enclosure-curved.png";
+const athenaMaeBaranaResume = "https://i.postimg.cc/n9pyn5L2/Athena-Mae-Barana-Resume.jpg";
+const athenaProfile = "https://i.postimg.cc/V0g3vRS9/athena-profile.jpg";
+const citInventoryScreen = "https://i.postimg.cc/2LGPywqK/cit-inventory-screen.png";
+const postureVest = "https://i.postimg.cc/q6w9qLtQ/posture-vest.png";
+const ziploc8Backpack = "https://i.postimg.cc/m1j0kwc8/ziploc8-backpack.png";
+const ziploc8Hardware = "https://i.postimg.cc/K3fdjNKW/ziploc8-hardware.png";
 
 const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   const image = event.currentTarget;
