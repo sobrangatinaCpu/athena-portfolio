@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import athenaProfile from "./assets/uploads/athena-profile.jpg";
 import cppCertificate from "./assets/uploads/cpp-certificate.jpg";
 import sqlBasicsCertificate from "./assets/uploads/sql-basics-certificate.png";
 import sqlIntermediateCertificate from "./assets/uploads/sql-intermediate-certificate.jpg";
@@ -12,6 +11,29 @@ import citrackerLogin from "./assets/uploads/citracker-login.jpg";
 import ziploc8Backpack from "./assets/uploads/ziploc8-backpack.png";
 import ziploc8Hardware from "./assets/uploads/ziploc8-hardware.png";
 import shallowSleepGameplay from "./assets/uploads/shallow-sleep-gameplay.png";
+
+// Files placed in Vite's public folder are referenced by URL, not imported.
+// This works both locally and when the app is deployed under a Vercel/Vite base path.
+const publicAsset = (fileName: string) =>
+  `${import.meta.env.BASE_URL}${fileName.replace(/^\//, "")}`;
+
+const athenaProfile = publicAsset("athena-profile.jpg");
+
+const handleProfileImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+  const image = event.currentTarget;
+  const attemptedFallback = image.dataset.fallbackAttempted === "true";
+
+  // Also support public/images/athena-profile.jpg if the file was placed there.
+  if (!attemptedFallback) {
+    image.dataset.fallbackAttempted = "true";
+    image.src = publicAsset("images/athena-profile.jpg");
+    return;
+  }
+
+  // Keep the layout clean if neither public path exists.
+  image.onerror = null;
+  image.style.display = "none";
+};
 
 type Project = {
   id: string;
@@ -405,7 +427,13 @@ function App() {
           <div className="about-grid">
             <div className="profile-card">
               <div className="profile-visual">
-                <img src={athenaProfile} alt="Portrait of Athena Mae N. Baraña" />
+                <img
+                    src={athenaProfile}
+                    alt="Portrait of Athena Mae N. Baraña"
+                    loading="eager"
+                    decoding="async"
+                    onError={handleProfileImageError}
+                  />
                 <div className="profile-frame" aria-hidden="true" />
                 <span>Frontend / UX</span>
               </div>
@@ -619,7 +647,13 @@ function App() {
           <div className="resume-sheet">
             <aside className="resume-side">
               <div className="resume-id">
-                <img src={athenaProfile} alt="" />
+                <img
+                    src={athenaProfile}
+                    alt="Athena Mae N. Baraña"
+                    loading="lazy"
+                    decoding="async"
+                    onError={handleProfileImageError}
+                  />
                 <div>
                   <strong>Athena Mae N. Baraña</strong>
                   <span>BIT · Computer Technology</span>
