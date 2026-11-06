@@ -34,6 +34,12 @@ const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   image.style.display = "none";
 };
 
+const handleContentImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+  const image = event.currentTarget;
+  image.onerror = null;
+  image.style.display = "none";
+};
+
 type Project = {
   id: string;
   title: string;
@@ -209,24 +215,28 @@ const contactDetails = [
 
 const certificates: Certificate[] = [
   {
+    id: "01",
     title: "SQL Basics",
     provider: "LearnSQL.com",
     date: "08 Nov 2025",
     image: sqlBasicsCertificate,
   },
   {
+    id: "02",
     title: "SQL Intermediate",
     provider: "SoloLearn",
     date: "11 Oct 2025",
     image: sqlIntermediateCertificate,
   },
   {
+    id: "03",
     title: "Introduction to SQL",
     provider: "SoloLearn",
     date: "23 Aug 2025",
     image: sqlIntroductionCertificate,
   },
   {
+    id: "04",
     title: "Introduction to C++",
     provider: "SoloLearn",
     date: "27 Mar 2025",
@@ -554,7 +564,7 @@ function App() {
               >
                 <button aria-label={`Open ${project.title} case study`}>
                   <div className={`project-image ${project.fit ? `fit-${project.fit}` : ""}`}>
-                    <img src={project.image} alt="" />
+                    <img src={project.image} alt={project.title} onError={handleContentImageError} />
                     <div className="image-grid" />
                     <span className="project-index">{project.id}</span>
                     <span className="project-open">
@@ -616,7 +626,7 @@ function App() {
                   aria-label={`View ${certificate.title} certificate`}
                 >
                   <div className="certificate-image">
-                    <img src={certificate.image} alt="" />
+                    <img src={certificate.image} alt={`${certificate.title} certificate`} onError={handleContentImageError} />
                     <span>
                       View credential <ArrowIcon diagonal />
                     </span>
@@ -723,7 +733,7 @@ function App() {
 
               <a
                 className="resume-download"
-                href="/Athena-Mae-Barana-Resume.jpg"
+                href={publicAsset("Athena-Mae-Barana-Resume.jpg")}
                 download="Athena-Mae-Barana-Resume.jpg"
               >
                 <span>Download my resume</span>
@@ -807,7 +817,7 @@ function App() {
             <div
               className={`modal-image ${selectedProject.fit ? `fit-${selectedProject.fit}` : ""}`}
             >
-              <img src={selectedProject.image} alt="" />
+              <img src={selectedProject.image} alt={selectedProject.title} onError={handleContentImageError} />
               <div className="modal-number">{selectedProject.id}</div>
               <span>
                 {selectedProject.category} / {selectedProject.year}
@@ -855,7 +865,7 @@ function App() {
                 {selectedProject.title === "Shallow Sleep" && (
                   <a
                     className="document-link"
-                    href="/documents/shallow-sleep-project.docx"
+                    href={publicAsset("documents/shallow-sleep-project.docx")}
                     download
                   >
                     Download project document <ArrowIcon diagonal />
@@ -869,7 +879,7 @@ function App() {
                 <div>
                   {selectedProject.gallery.map((item) => (
                     <figure key={item.caption}>
-                      <img src={item.src} alt={item.caption} />
+                      <img src={item.src} alt={item.caption} onError={handleContentImageError} />
                       <figcaption>{item.caption}</figcaption>
                     </figure>
                   ))}
