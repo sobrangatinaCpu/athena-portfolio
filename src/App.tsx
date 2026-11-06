@@ -3,18 +3,18 @@ import { useEffect, useState, type SyntheticEvent } from "react";
 // Hosted portfolio images in the exact order provided.
 const citrackerLogin = "/citracker-login.jpg";
 const cppCertificate = "/cpp-certificate.jpg";
-const shallowSleepGameplay = "/shallow-sleep-gameplay.png";
-const sqlBasicsCertificate = "/sql-basics-certificate.png";
+const shallowSleepGameplay = "/shallow-sleep-gameplay.jpg";
+const sqlBasicsCertificate = "/sql-basics-certificate.jpg";
 const sqlIntermediateCertificate = "/sql-intermediate-certificate.jpg";
 const sqlIntroductionCertificate = "/sql-introduction-certificate.jpg";
-const vestEnclosureBox = "/vest-enclosure-box.png";
-const vestEnclosureCurved = "/vest-enclosure-curved.png";
+const vestEnclosureBox = "/vest-enclosure-box.jpg";
+const vestEnclosureCurved = "/vest-enclosure-curved.jpg";
 const athenaMaeBaranaResume = "/Athena-Mae-Barana-Resume.jpg";
 const athenaProfile = "/athena-profile.jpg";
-const citInventoryScreen = "/cit-inventory-screen.png";
-const postureVest = "/posture-vest.png";
-const ziploc8Backpack = "/ziploc8-backpack.png";
-const ziploc8Hardware = "/ziploc8-hardware.png";
+const citInventoryScreen = "/cit-inventory-screen.jpg";
+const postureVest = "/posture-vest.jpg";
+const ziploc8Backpack = "/ziploc8-backpack.jpg";
+const ziploc8Hardware = "/ziploc8-hardware.jpg";
 const faviconUrl = "/favicon.png";
 
 const handleProfileImageError = (event: SyntheticEvent<HTMLImageElement>) => {
