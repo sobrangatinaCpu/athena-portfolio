@@ -1,9 +1,5 @@
 import { useEffect, useState, type SyntheticEvent } from "react";
 
-// Keep this helper because the project document is still stored in /public.
-const publicAsset = (fileName: string) =>
-  `${import.meta.env.BASE_URL}${fileName.replace(/^\//, "")}`;
-
 // Hosted portfolio images in the exact order provided.
 const citrackerLogin = "https://i.ibb.co/p6xjMvTB/citracker-login.jpg";
 const cppCertificate = "https://i.ibb.co/FbmYdDDd/cpp-certificate.jpg";
@@ -857,7 +853,7 @@ function App() {
                 {selectedProject.title === "Shallow Sleep" && (
                   <a
                     className="document-link"
-                    href={publicAsset("documents/shallow-sleep-project.docx")}
+                    href="/documents/shallow-sleep-project.docx"
                     download
                   >
                     Download project document <ArrowIcon diagonal />
